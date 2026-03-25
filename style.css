@@ -1,0 +1,22 @@
+:root { --red: #e74c3c; --green: #2ecc71; --gold: #FFD700; }
+body { background: #0b0e11; color: #fff; font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.glass-container { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); padding: 25px; border-radius: 25px; width: 340px; border: 1px solid rgba(255,255,255,0.1); text-align: center; }
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+#dash-avatar { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--red); cursor: pointer; }
+.stats-row { display: flex; gap: 10px; margin-bottom: 15px; }
+.stat-box { flex: 1; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 10px; font-size: 14px; }
+.xp-container { margin-bottom: 20px; text-align: left; font-size: 12px; }
+.xp-bar { background: #222; height: 10px; border-radius: 5px; margin-top: 5px; overflow: hidden; }
+#xp-fill { background: var(--green); width: 0%; height: 100%; transition: 0.4s; }
+.belt-line { background: #222; height: 6px; border-radius: 3px; margin: 5px 0 15px 0; }
+.fill { height: 100%; background: var(--red); width: 0%; transition: 1s; }
+.grayed { opacity: 0.2; }
+.gold-belt { background: var(--gold) !important; box-shadow: 0 0 15px var(--gold); }
+.main-btn { width: 100%; padding: 15px; border-radius: 12px; border: none; background: var(--red); color: white; font-weight: bold; cursor: pointer; }
+#timer-display { font-size: 56px; font-weight: bold; margin: 10px 0; color: var(--red); }
+#tech-card { background: rgba(255,255,255,0.07); padding: 15px; border-radius: 12px; text-align: left; min-height: 120px; font-size: 14px; }
+.training-controls { display: flex; gap: 10px; margin: 20px 0; }
+.training-controls button { flex: 1; padding: 12px; border-radius: 8px; border: none; cursor: pointer; font-weight: bold; }
+.exit-btn { background: none; color: #777; border: none; cursor: pointer; font-size: 12px; }
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] #tech-card { text-align: right; }

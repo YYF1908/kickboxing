@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Kickboxing Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="dashboard" class="glass-container">
+        <div class="header">
+            <div id="profile-trigger" onclick="showPage('profile')">
+                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" id="dash-avatar">
+            </div>
+            <h1 id="title">Kickboxing Pro</h1>
+            <button onclick="toggleLanguage()" id="lang-btn">العربية</button>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box">🔥 <span id="streak-val">0</span> Day</div>
+            <div class="stat-box">🏆 <span id="xp-val">0</span> XP</div>
+        </div>
+
+        <div class="xp-container">
+            <div id="xp-label">0 / 500 XP to Next Rank</div>
+            <div class="xp-bar"><div id="xp-fill"></div></div>
+        </div>
+
+        <div class="progress-section">
+            <p id="label-student">Student Journey (White - 1st Dan)</p>
+            <div class="belt-line"><div id="fill-student" class="fill"></div></div>
+            
+            <p id="label-master" class="grayed">Master Journey (1st - 9th Dan)</p>
+            <div class="belt-line grayed"><div id="fill-master" class="fill"></div></div>
+        </div>
+
+        <div class="settings-mini">
+            <label>Busy Mode: <input type="checkbox" id="busy-mode"></label>
+        </div>
+
+        <button class="main-btn" onclick="startTraining()">GO TO TRAINING</button>
+    </div>
+
+    <div id="training" class="glass-container" style="display:none;">
+        <div id="status-label" style="color: #2ecc71; font-weight: bold;">WORK</div>
+        <div id="timer-display">03:00</div>
+        <h2 id="current-move-name">Warm Up</h2>
+        <div id="tech-card">
+            <ul id="move-tips"></ul>
+        </div>
+        <div class="training-controls">
+            <button id="timer-ctrl" onclick="toggleTimer()">Pause</button>
+            <button onclick="nextMove()">Next →</button>
+        </div>
+        <button class="exit-btn" onclick="exitTraining()">Exit</button>
+    </div>
+
+    <div id="profile" class="glass-container" style="display:none;">
+        <button class="back-btn" onclick="showPage('dashboard')">←</button>
+        <h2>Fighter Profile</h2>
+        <input type="text" id="user-name" placeholder="Fighter Name" onchange="saveData()">
+        <select id="belt-select" onchange="updateBeltFromProfile()">
+            <option value="white">White</option>
+            <option value="yellow">Yellow</option>
+            <option value="orange">Orange</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="brown">Brown (1st Kyu)</option>
+            <option value="dan1">Black (1st Dan)</option>
+            <option value="dan9">Black (9th Dan - Gold)</option>
+        </select>
+        <button onclick="clearData()" style="background: #c0392b; margin-top: 20px;">Reset All Data</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
